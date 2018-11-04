@@ -1,0 +1,34 @@
+Solutions of pointer questions:
+
+1.Output:
+  *p3 = S
+  *p3 = T, p3 = 6940
+  *p1 = S, p1 = 6940
+
+2.Option D (*p = 75)
+
+3.The error is that a double pointer points to a character variable which in itself is a mismatch.
+
+4.int main(){
+   char blocks[3] = {'A','B','C'};
+   char *ptr = &blocks[0];
+   char temp;
+
+   temp = blocks[0];                   //temp = A
+   temp = *(blocks + 2);               //temp = C
+   temp = *(ptr + 1);                  //temp = B
+   temp = *ptr;                        //temp = A
+
+   ptr = blocks + 1;                   //ptr = 4435
+   temp = *ptr;                        //temp = B
+   temp = *(ptr + 1);                  //temp = C
+
+   ptr = blocks;                       //ptr = 4434
+   temp = *++ptr;                      //temp = B
+   temp = ++*ptr;                      //temp = C
+   temp = *ptr++;                      //temp = C
+   temp = *ptr;                        //temp = C
+
+//return statement
+   return 0;
+}
